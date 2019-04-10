@@ -18,7 +18,6 @@ exports.index = (req,res) => {
 exports.view = (req, res) => {
     Anime.findById(req.params.anime_id, (err, anime) => {
         if (err) {
-            console.log(err);
             res.send(err);
         }
         res.json({

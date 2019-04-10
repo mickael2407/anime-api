@@ -40,8 +40,8 @@ const animeSchema = mongo.Schema({
 
 });
 
-var Anime = module.exports = mongo.model('anime',animeSchema);
+var Anime = module.exports = mongo.model('animes',animeSchema);
 
 module.exports.get = function(callback, limit) {
-    Anime.find(callback);
+    Anime.find(callback)
 }
