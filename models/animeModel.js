@@ -1,7 +1,7 @@
 const mongo = require('mongoose');
 
 const animeSchema = mongo.Schema({
-    _id: String,
+    _id: mongo.Schema.Types.ObjectId,
     request_hash: String,
     request_cached: Boolean,
     request_cache_expiry: Number,
