@@ -8,11 +8,7 @@ exports.index = (req,res) => {
                 message: err,
             });
         }
-        res.json({
-            status: "success",
-            message: "Anime retrieved successfully",
-            data: anime
-        });
+        res.json(anime);
     });
 }
 exports.view = (req, res) => {
@@ -20,9 +16,6 @@ exports.view = (req, res) => {
         if (err) {
             res.send(err);
         }
-        res.json({
-            message: 'Anime detail',
-            data: anime
-        });
+        res.json(anime);
     })
 }
