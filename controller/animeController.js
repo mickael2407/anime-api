@@ -9,7 +9,7 @@ exports.index = (req,res) => {
             });
         }
         res.json(anime);
-    },50);
+    }, parseInt(req.params.limit,10));
 }
 exports.view = (req, res) => {
     Anime.findById(req.params.anime_id, (err, anime) => {

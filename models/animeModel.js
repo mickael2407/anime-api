@@ -2,10 +2,6 @@ const mongo = require('mongoose');
 
 const animeSchema = mongo.Schema({
     _id: mongo.Schema.Types.ObjectId,
-    request_hash: String,
-    request_cached: Boolean,
-    request_cache_expiry: Number,
-    mal_id: Number,
     url: String,
     image_url: String,
     trailer_url: String,
@@ -25,7 +21,6 @@ const animeSchema = mongo.Schema({
     score_by: Number,
     rank: Number,
     popularity: Number,
-    members: Number,
     favorites: Number,
     synopsis: String,
     premiered: String,

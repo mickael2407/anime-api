@@ -15,7 +15,9 @@ express.use(cors());
 express.use(bodyParser.urlencoded({
     extended: true
 }));
-
+express.use((req,res) => {
+    req.headers["content-type"] = 'application/json';
+});
 express.use(bodyParser.json());
 
 express.get('/', (req, res) => {
