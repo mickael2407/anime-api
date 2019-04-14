@@ -3,8 +3,7 @@ class AuthReponse{
         this.username = username;
         this.nbConnections = nbConnections;
         this.lastConnection = lastConnection;
-    }
-    
+    }   
 }
 
 exports.AuthReponse;

@@ -10,3 +10,7 @@ const userSchema = mongo.Schema({
 });
 
 var User = module.exports = mongo.model('user', userSchema);
+
+module.exports.signin = ((callback, username, password) =>{
+    User.find({'username': username, 'password': password},callback);
+});
