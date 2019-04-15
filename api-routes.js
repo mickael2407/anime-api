@@ -12,5 +12,5 @@ router.get('/', (req,res) => {
 router.route('/anime/limit/:limit').get(animeController.index);
 router.route('/anime/:anime_id').get(animeController.view);
 router.route('/auth/sigin').post(authController.signin);
-router.route('/auth/signup').get(authController.signup);
+router.route('/auth/signup').post(authController.signup);
 module.exports = router;
