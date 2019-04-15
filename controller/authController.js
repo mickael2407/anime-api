@@ -8,7 +8,7 @@ exports.signin = (req, res) => {
         message: 'Bad login'
       });
     } else {       
-      var authRponse = new AuthReponse(user[0].username, user[0].nbConnections, user[0].lastConnection);
+      var authRponse = new AuthReponse(user.username, user.nbConnections, user.lastConnection);
       res.json(authRponse);
     }
   }, req.body.username, req.body.password)
