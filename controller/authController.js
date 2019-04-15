@@ -1,17 +1,15 @@
 User = require("../models/userModel");
-authReponse = require("../entity/AuthReponse");
+var AuthReponse = require("../entity/AuthReponse");
 
 exports.signin = (req, res) => {
   User.signin((err, user) => {
-    console.log(user[0]);
     if (err) {
       res.json({
         message: 'Bad login'
       });
-    } else {
-/*       var authRponse = new AuthReponse(user[0].username, user[0].nbConnections, user[0].lastConnection);
-      console.log(authRponse);  */
-      res.json(user);
+    } else {       
+      var authRponse = new AuthReponse(user[0].username, user[0].nbConnections, user[0].lastConnection);
+      res.json(authRponse);
     }
   }, req.body.username, req.body.password)
 };
