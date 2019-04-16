@@ -8,12 +8,11 @@ exports.signin = (req, res) => {
     if (user) {
       bcrypt.compare(req.body.password, user.password, (err, checkHash) => {
         if (checkHash) {
-          var authRponse = new AuthReponse(
+          const authRponse = new AuthReponse(
             user.username,
             user.nbConnections,
             user.lastConnection
-          );
-          // userLoged = user
+          ); 
           user.nbConnections ++;
           user.lastConnection = new Date();
           user.save(user);
@@ -26,20 +25,9 @@ exports.signin = (req, res) => {
       });
     } else {
       res.json({
-        message: "Bad login"
+        message: "User not found"
       });
     }
-
-    /*     if (!user ) {
-      res.json({
-        message: 'Bad login'
-      });
-    } else if (err) {
-      throw err;
-    } else {       
-      var authRponse = new AuthReponse(user.username, user.nbConnections, user.lastConnection);
-      res.json(authRponse);
-    } */
   }, req.body.username);
 };
 exports.signup = (req, res) => {
