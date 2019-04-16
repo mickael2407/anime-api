@@ -1,6 +1,4 @@
 const mongo = require('mongoose');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 const userSchema = mongo.Schema({
     _id: mongo.Schema.Types.ObjectId,
