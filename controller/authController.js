@@ -18,13 +18,13 @@ exports.signin = (req, res) => {
           user.save(user);
           res.json(authRponse);
         } else {
-          res.json({
+          res.status(401).json({
             message: "Bad login"
           });
         }
       });
     } else {
-      res.json({
+      res.status(401).json({
         message: "User not found"
       });
     }
